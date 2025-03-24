@@ -3,8 +3,9 @@
 require "simplecov"
 SimpleCov.start
 
-require 'simplecov-cobertura'
-SimpleCov.formatter = SimpleCov::Formatter::CoberturaFormatter
+SimpleCov.start "rails" do
+  coverage_dir ".reports/coverage"
+end
 
 require "calculator"
 require "minitest/autorun"
