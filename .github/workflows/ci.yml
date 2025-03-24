@@ -14,7 +14,8 @@ jobs:
         run: bundle install
       - name: Run tests and collect coverage
         run: bundle exec rake
-      - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v5
-        env:
-          CODECOV_TOKEN: ${{ secrets.CODECOV_ORG_TOKEN }}
+      - name: Upload coverage reports to Codecov
+          uses: codecov/codecov-action@v3
+          with:
+            url: ${{ secrets.CODECOV_URL }}
+            token: ${{ secrets.CODECOV_TOKEN }}
